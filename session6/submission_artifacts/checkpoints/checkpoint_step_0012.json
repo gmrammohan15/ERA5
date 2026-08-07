@@ -1,0 +1,14 @@
+{
+  "checkpoint_file": "checkpoints/checkpoint_step_0012.pt",
+  "checkpoint_file_hash": "3e879717213baea7cfcd92ccebe07b11f241a063d8f8d75f6c956887c3b4736f",
+  "config_hash": "130d36dfe6582f4804b325e42fda15c2eff7c978f2a04c96703f79dc001fdb21",
+  "ledger_head_hash": "e7c30c3b6aba2bac26829c6d7cc68bdd67f6e5a8b4fb47aa3dc19b7a1a3c7942",
+  "ledger_record_count": 12,
+  "manifest_hash": "34749ef8177275a4ba7e3bc38ae8e8253f3f4fb803c4266eb30f2141196dc598",
+  "model_state_hash": "d05c7cd37838d929d5d5768ac2983fea37d1ee89affe563db9011490838a9276",
+  "next_batch_index": 12,
+  "parent": null,
+  "run_id": "run-761ef330a79730e7",
+  "schema_version": "v1",
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}

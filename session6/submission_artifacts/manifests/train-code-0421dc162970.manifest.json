@@ -1,0 +1,31 @@
+{
+  "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+  "contamination_checked": true,
+  "content_hash": "0421dc162970f580b185c20b8c4ebedefc9f45eceacbe6dc4e2ddae0f45efb0e",
+  "document_count": 5,
+  "document_ids": [
+    "code_001",
+    "code_002",
+    "code_003",
+    "code_004",
+    "code_005"
+  ],
+  "eval_overlap": false,
+  "is_eval": false,
+  "is_selection_proxy": false,
+  "is_validation": false,
+  "lane": "code",
+  "languages": [
+    "python"
+  ],
+  "licenses": [
+    "MIT-demo"
+  ],
+  "logical_content_hash": "0421dc162970f580b185c20b8c4ebedefc9f45eceacbe6dc4e2ddae0f45efb0e",
+  "schema_version": "v1",
+  "shard_id": "train-code-0421dc162970",
+  "shard_path": "shards/train-code-0421dc162970.jsonl",
+  "split": "train",
+  "token_count": 546,
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}

@@ -1,0 +1,29 @@
+{
+  "eval_attempt_blocked": true,
+  "eval_block_reason": "mixture_compiler blocked non-train documents: ['eval_001']",
+  "evaluation_no_update": true,
+  "evaluation_records": [
+    {
+      "doc_id": "eval_001",
+      "mean_loss": 4.785594463348389,
+      "model_state_hash": "d05c7cd37838d929d5d5768ac2983fea37d1ee89affe563db9011490838a9276",
+      "optimizer_update": false,
+      "shard_id": "eval-reasoning-7c124dcc2cf4",
+      "split": "eval"
+    },
+    {
+      "doc_id": "valid_001",
+      "mean_loss": 4.8031392097473145,
+      "model_state_hash": "d05c7cd37838d929d5d5768ac2983fea37d1ee89affe563db9011490838a9276",
+      "optimizer_update": false,
+      "shard_id": "validation-general_web-5c9b11b352e7",
+      "split": "validation"
+    }
+  ],
+  "model_hash_after_evaluation": "d05c7cd37838d929d5d5768ac2983fea37d1ee89affe563db9011490838a9276",
+  "model_hash_before_evaluation": "d05c7cd37838d929d5d5768ac2983fea37d1ee89affe563db9011490838a9276",
+  "schema_version": "v1",
+  "train_eval_validation_content_overlaps": [],
+  "validation_attempt_blocked": true,
+  "validation_block_reason": "trainer blocked non-train documents: ['valid_001']"
+}

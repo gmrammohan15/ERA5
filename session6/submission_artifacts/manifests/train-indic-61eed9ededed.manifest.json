@@ -1,0 +1,33 @@
+{
+  "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+  "contamination_checked": true,
+  "content_hash": "61eed9edededcb18119589d35c579cf4f4c2b124b882060a948547e9bd2b646a",
+  "document_count": 5,
+  "document_ids": [
+    "indic_001",
+    "indic_002",
+    "indic_003",
+    "indic_004",
+    "indic_005"
+  ],
+  "eval_overlap": false,
+  "is_eval": false,
+  "is_selection_proxy": false,
+  "is_validation": false,
+  "lane": "indic",
+  "languages": [
+    "hi",
+    "kn",
+    "te"
+  ],
+  "licenses": [
+    "CC0-demo"
+  ],
+  "logical_content_hash": "61eed9edededcb18119589d35c579cf4f4c2b124b882060a948547e9bd2b646a",
+  "schema_version": "v1",
+  "shard_id": "train-indic-61eed9ededed",
+  "shard_path": "shards/train-indic-61eed9ededed.jsonl",
+  "split": "train",
+  "token_count": 727,
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}

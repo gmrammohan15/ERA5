@@ -1,0 +1,16 @@
+{
+  "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+  "config": {
+    "byte_offset": 3,
+    "schema_version": "v1",
+    "special_tokens": {
+      "bos": 1,
+      "eos": 2,
+      "pad": 0
+    },
+    "type": "utf8_byte",
+    "vocab_size": 259
+  },
+  "schema_version": "v1",
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}

@@ -1,0 +1,229 @@
+{
+  "all_passed": true,
+  "generated_from_audit_hash": "6ef54ca061732dee9bec24fca9081b94303382dfd8d5a657bab266d32cf5d6bc",
+  "requirements": {
+    "checkpoint_integrity": {
+      "audit_checks": [
+        "checkpoint_integrity"
+      ],
+      "evidence": [
+        "checkpoints/checkpoint_step_0004.json",
+        "checkpoints/checkpoint_step_0012.json"
+      ],
+      "measurements": {
+        "checkpoint_integrity": {}
+      },
+      "result": "PASS"
+    },
+    "consumption_and_learning_ledgers": {
+      "audit_checks": [
+        "consumption_ledger"
+      ],
+      "evidence": [
+        "ledgers/consumption.jsonl",
+        "ledgers/learning.jsonl",
+        "ledgers/step_ledger.jsonl"
+      ],
+      "measurements": {
+        "consumption_ledger": {
+          "ledger_head_hash": "e7c30c3b6aba2bac26829c6d7cc68bdd67f6e5a8b4fb47aa3dc19b7a1a3c7942",
+          "records": 12
+        }
+      },
+      "result": "PASS"
+    },
+    "crash_recovery": {
+      "audit_checks": [
+        "crash_recovery"
+      ],
+      "evidence": [
+        "checkpoints/crash_intent.json",
+        "ledgers/step_ledger.jsonl",
+        "run.log"
+      ],
+      "measurements": {
+        "crash_recovery": {
+          "expected_batch_id": "batch-0004-d00ab8437665c04b",
+          "resumed_batch_id": "batch-0004-d00ab8437665c04b"
+        }
+      },
+      "result": "PASS"
+    },
+    "end_to_end_execution": {
+      "audit_checks": [
+        "end_to_end"
+      ],
+      "evidence": [
+        "branches/fork_code_heavy/fork_report.json",
+        "ledgers/consumption.jsonl",
+        "ledgers/learning.jsonl",
+        "ledgers/opus_decisions.jsonl",
+        "ledgers/step_ledger.jsonl",
+        "manifests/shard_index.json",
+        "performance.json",
+        "replay/replay_report.json",
+        "run.log"
+      ],
+      "measurements": {
+        "end_to_end": {}
+      },
+      "result": "PASS"
+    },
+    "evaluation_firewall": {
+      "audit_checks": [
+        "evaluation_firewall"
+      ],
+      "evidence": [
+        "ledgers/consumption.jsonl",
+        "ledgers/evaluation.jsonl",
+        "ledgers/firewall_report.json"
+      ],
+      "measurements": {
+        "evaluation_firewall": {
+          "forbidden_training_shards": []
+        }
+      },
+      "result": "PASS"
+    },
+    "fork": {
+      "audit_checks": [
+        "fork"
+      ],
+      "evidence": [
+        "branches/fork_code_heavy/checkpoint.json",
+        "branches/fork_code_heavy/fork_report.json"
+      ],
+      "measurements": {
+        "fork": {}
+      },
+      "result": "PASS"
+    },
+    "learning_trace": {
+      "audit_checks": [
+        "learning_trace"
+      ],
+      "evidence": [
+        "ledgers/learning.jsonl",
+        "ledgers/step_ledger.jsonl"
+      ],
+      "measurements": {
+        "learning_trace": {
+          "token_loss_records": 4928
+        }
+      },
+      "result": "PASS"
+    },
+    "mixture_compliance": {
+      "audit_checks": [
+        "mixture_compliance",
+        "protected_floors"
+      ],
+      "evidence": [
+        "batches/",
+        "ledgers/consumption.jsonl",
+        "manifests/mixture_schedule.json"
+      ],
+      "measurements": {
+        "mixture_compliance": {},
+        "protected_floors": {}
+      },
+      "result": "PASS"
+    },
+    "opus_audit_trail": {
+      "audit_checks": [
+        "opus_audit_trail"
+      ],
+      "evidence": [
+        "ledgers/opus_decisions.jsonl"
+      ],
+      "measurements": {
+        "opus_audit_trail": {
+          "base_statuses": [
+            "accepted",
+            "deferred",
+            "rejected"
+          ],
+          "decision_count": 75,
+          "protected_overrides": 18
+        }
+      },
+      "result": "PASS"
+    },
+    "packing_correctness": {
+      "audit_checks": [
+        "packing_correctness"
+      ],
+      "evidence": [
+        "batches/",
+        "performance/packing_report.json"
+      ],
+      "measurements": {
+        "packing_correctness": {
+          "policy_counts": {
+            "best_fit": 46,
+            "greedy": 35,
+            "structure_preserving": 15
+          },
+          "sequence_count": 96
+        }
+      },
+      "result": "PASS"
+    },
+    "replay": {
+      "audit_checks": [
+        "replay"
+      ],
+      "evidence": [
+        "replay/replay_report.json"
+      ],
+      "measurements": {
+        "replay": {
+          "batches": 4,
+          "interval": [
+            0,
+            4
+          ]
+        }
+      },
+      "result": "PASS"
+    },
+    "throughput": {
+      "audit_checks": [
+        "throughput"
+      ],
+      "evidence": [
+        "ledgers/step_ledger.jsonl",
+        "performance.json"
+      ],
+      "measurements": {
+        "throughput": {
+          "packing_utilization": 0.8777669270833334,
+          "useful_tokens_per_second": 48103.74274807259
+        }
+      },
+      "result": "PASS"
+    },
+    "tokenizer_integrity": {
+      "audit_checks": [
+        "tokenizer_integrity",
+        "shard_manifest_integrity"
+      ],
+      "evidence": [
+        "manifests/shard_index.json",
+        "manifests/tokenizer.manifest.json",
+        "shards/"
+      ],
+      "measurements": {
+        "shard_manifest_integrity": {
+          "manifest_count": 10
+        },
+        "tokenizer_integrity": {
+          "roundtrip_samples": 4,
+          "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+        }
+      },
+      "result": "PASS"
+    }
+  },
+  "schema_version": "v1"
+}

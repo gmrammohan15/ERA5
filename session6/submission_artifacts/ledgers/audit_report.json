@@ -1,0 +1,188 @@
+{
+  "all_passed": true,
+  "audit_hash": "6ef54ca061732dee9bec24fca9081b94303382dfd8d5a657bab266d32cf5d6bc",
+  "checks": {
+    "checkpoint_integrity": {
+      "detail": "checkpoint model/data state is tied to exact ledger offsets and hashes",
+      "evidence": [
+        "checkpoints/checkpoint_step_0004.json",
+        "checkpoints/checkpoint_step_0012.json"
+      ],
+      "measurements": {},
+      "result": "PASS"
+    },
+    "consumption_ledger": {
+      "detail": "hash chain, contiguous batch indices and consumption/learning projections verified",
+      "evidence": [
+        "ledgers/step_ledger.jsonl",
+        "ledgers/consumption.jsonl",
+        "ledgers/learning.jsonl"
+      ],
+      "measurements": {
+        "ledger_head_hash": "e7c30c3b6aba2bac26829c6d7cc68bdd67f6e5a8b4fb47aa3dc19b7a1a3c7942",
+        "records": 12
+      },
+      "result": "PASS"
+    },
+    "crash_recovery": {
+      "detail": "fresh process consumed the exact expected next batch with no skip or duplicate",
+      "evidence": [
+        "checkpoints/crash_intent.json",
+        "ledgers/step_ledger.jsonl",
+        "run.log"
+      ],
+      "measurements": {
+        "expected_batch_id": "batch-0004-d00ab8437665c04b",
+        "resumed_batch_id": "batch-0004-d00ab8437665c04b"
+      },
+      "result": "PASS"
+    },
+    "end_to_end": {
+      "detail": "all required execution artifacts exist",
+      "evidence": [
+        "run.log",
+        "performance.json",
+        "manifests/shard_index.json",
+        "ledgers/step_ledger.jsonl",
+        "ledgers/consumption.jsonl",
+        "ledgers/learning.jsonl",
+        "ledgers/opus_decisions.jsonl",
+        "replay/replay_report.json",
+        "branches/fork_code_heavy/fork_report.json"
+      ],
+      "measurements": {},
+      "result": "PASS"
+    },
+    "evaluation_firewall": {
+      "detail": "eval and validation were rejected from training and evaluated without parameter updates",
+      "evidence": [
+        "ledgers/firewall_report.json",
+        "ledgers/evaluation.jsonl",
+        "ledgers/consumption.jsonl"
+      ],
+      "measurements": {
+        "forbidden_training_shards": []
+      },
+      "result": "PASS"
+    },
+    "fork": {
+      "detail": "branch preserves parent checkpoint lineage and diverges under a code-heavy future mixture",
+      "evidence": [
+        "branches/fork_code_heavy/fork_report.json",
+        "branches/fork_code_heavy/checkpoint.json"
+      ],
+      "measurements": {},
+      "result": "PASS"
+    },
+    "learning_trace": {
+      "detail": "real token/sample losses and gradients link back to source documents",
+      "evidence": [
+        "ledgers/learning.jsonl",
+        "ledgers/step_ledger.jsonl"
+      ],
+      "measurements": {
+        "token_loss_records": 4928
+      },
+      "result": "PASS"
+    },
+    "mixture_compliance": {
+      "detail": "observed stage lane counts equal the compiled schedule",
+      "evidence": [
+        "manifests/mixture_schedule.json",
+        "ledgers/consumption.jsonl"
+      ],
+      "measurements": {},
+      "result": "PASS"
+    },
+    "opus_audit_trail": {
+      "detail": "gradient-alignment decisions include acceptance, rejection, deferral and protected override",
+      "evidence": [
+        "ledgers/opus_decisions.jsonl"
+      ],
+      "measurements": {
+        "base_statuses": [
+          "accepted",
+          "deferred",
+          "rejected"
+        ],
+        "decision_count": 75,
+        "protected_overrides": 18
+      },
+      "result": "PASS"
+    },
+    "packing_correctness": {
+      "detail": "tensor hashes, causal masks, segment boundaries, padding masks and position shapes verified",
+      "evidence": [
+        "batches/",
+        "performance/packing_report.json"
+      ],
+      "measurements": {
+        "policy_counts": {
+          "best_fit": 46,
+          "greedy": 35,
+          "structure_preserving": 15
+        },
+        "sequence_count": 96
+      },
+      "result": "PASS"
+    },
+    "protected_floors": {
+      "detail": "Indic, agentic and reasoning floors hold in every global batch",
+      "evidence": [
+        "manifests/mixture_schedule.json",
+        "batches/"
+      ],
+      "measurements": {},
+      "result": "PASS"
+    },
+    "replay": {
+      "detail": "historical batch ids, token spans, tensor hashes, losses and model hashes match",
+      "evidence": [
+        "replay/replay_report.json"
+      ],
+      "measurements": {
+        "batches": 4,
+        "interval": [
+          0,
+          4
+        ]
+      },
+      "result": "PASS"
+    },
+    "shard_manifest_integrity": {
+      "detail": "all content, tokenizer, cleaning and token-count hashes match",
+      "evidence": [
+        "manifests/shard_index.json",
+        "shards/"
+      ],
+      "measurements": {
+        "manifest_count": 10
+      },
+      "result": "PASS"
+    },
+    "throughput": {
+      "detail": "packing and useful-token throughput claims reconstruct from batch and learning records",
+      "evidence": [
+        "performance.json",
+        "ledgers/step_ledger.jsonl"
+      ],
+      "measurements": {
+        "packing_utilization": 0.8777669270833334,
+        "useful_tokens_per_second": 48103.74274807259
+      },
+      "result": "PASS"
+    },
+    "tokenizer_integrity": {
+      "detail": "frozen tokenizer hash and multilingual byte round-trips verified",
+      "evidence": [
+        "manifests/tokenizer.manifest.json"
+      ],
+      "measurements": {
+        "roundtrip_samples": 4,
+        "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+      },
+      "result": "PASS"
+    }
+  },
+  "schema_version": "v1"
+}

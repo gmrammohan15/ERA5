@@ -1,0 +1,26 @@
+{
+  "counts": {
+    "loss_bearing_tokens": 4928,
+    "non_pad_tokens": 5393,
+    "raw_tokens": 6144,
+    "source_spans": 103
+  },
+  "formulae": {
+    "packing_utilization": "non_pad_tokens / raw_tokens",
+    "pad_only_baseline_utilization": "non_pad_tokens / (source_spans * sequence_length)",
+    "raw_tokens_per_second": "raw_tokens / sum(step.learning.elapsed_seconds)",
+    "useful_loss_bearing_tokens_per_second": "loss_bearing_tokens / sum(step.learning.elapsed_seconds)"
+  },
+  "packing_utilization": 0.8777669270833334,
+  "pad_only_baseline_utilization": 0.8181128640776699,
+  "raw_tokens_per_second": 59973.49745214245,
+  "resume_expected_batch_id": "batch-0004-d00ab8437665c04b",
+  "schema_version": "v1",
+  "timings_seconds": {
+    "opus": 0.050681833003181964,
+    "packing": 0.10090345899516251,
+    "replay": 0.04660345800220966,
+    "training": 0.10244525100279134
+  },
+  "useful_loss_bearing_tokens_per_second": 48103.74274807259
+}

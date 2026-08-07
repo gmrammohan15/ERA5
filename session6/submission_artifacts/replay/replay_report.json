@@ -1,0 +1,56 @@
+{
+  "all_matched": true,
+  "comparisons": [
+    {
+      "batch_index": 0,
+      "loss_delta": 0.0,
+      "matched": true,
+      "original_batch_id": "batch-0000-dd106dcf7a642041",
+      "original_tensor_hash": "aca4a5f4f340c6ec5cbe2fff929b54fe2c36cb8d04ec8a5eca40e5bc987cb438",
+      "post_model_hash_match": true,
+      "replay_batch_id": "batch-0000-dd106dcf7a642041",
+      "replay_tensor_hash": "aca4a5f4f340c6ec5cbe2fff929b54fe2c36cb8d04ec8a5eca40e5bc987cb438",
+      "source_spans_match": true
+    },
+    {
+      "batch_index": 1,
+      "loss_delta": 0.0,
+      "matched": true,
+      "original_batch_id": "batch-0001-3e91f120cc0f88ac",
+      "original_tensor_hash": "508f8cba3e368aef7f4696ed4851cc122e7b66c162f7ed44205be1803bb13126",
+      "post_model_hash_match": true,
+      "replay_batch_id": "batch-0001-3e91f120cc0f88ac",
+      "replay_tensor_hash": "508f8cba3e368aef7f4696ed4851cc122e7b66c162f7ed44205be1803bb13126",
+      "source_spans_match": true
+    },
+    {
+      "batch_index": 2,
+      "loss_delta": 0.0,
+      "matched": true,
+      "original_batch_id": "batch-0002-2fa95ae3c06636d5",
+      "original_tensor_hash": "6913a3896e38024f0b889be0f268d70d27b5eef02b93feebfaa0a50e415f6877",
+      "post_model_hash_match": true,
+      "replay_batch_id": "batch-0002-2fa95ae3c06636d5",
+      "replay_tensor_hash": "6913a3896e38024f0b889be0f268d70d27b5eef02b93feebfaa0a50e415f6877",
+      "source_spans_match": true
+    },
+    {
+      "batch_index": 3,
+      "loss_delta": 0.0,
+      "matched": true,
+      "original_batch_id": "batch-0003-9e15896e80e4437c",
+      "original_tensor_hash": "8a79fc6b800dce12d50fedc39baa529aeccafa235bfe02ed5416d604cb240c79",
+      "post_model_hash_match": true,
+      "replay_batch_id": "batch-0003-9e15896e80e4437c",
+      "replay_tensor_hash": "8a79fc6b800dce12d50fedc39baa529aeccafa235bfe02ed5416d604cb240c79",
+      "source_spans_match": true
+    }
+  ],
+  "elapsed_seconds": 0.04660345800220966,
+  "interval": [
+    0,
+    4
+  ],
+  "schema_version": "v1",
+  "source": "historical_step_ledger"
+}

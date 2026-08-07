@@ -1,0 +1,27 @@
+{
+  "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+  "contamination_checked": true,
+  "content_hash": "50b8f7c690bbe36bbe227493c24b02ac19fec70aee8f2c2d8fd8a4b3813678a6",
+  "document_count": 1,
+  "document_ids": [
+    "proxy_code"
+  ],
+  "eval_overlap": false,
+  "is_eval": false,
+  "is_selection_proxy": true,
+  "is_validation": false,
+  "lane": "code",
+  "languages": [
+    "python"
+  ],
+  "licenses": [
+    "MIT-demo"
+  ],
+  "logical_content_hash": "50b8f7c690bbe36bbe227493c24b02ac19fec70aee8f2c2d8fd8a4b3813678a6",
+  "schema_version": "v1",
+  "shard_id": "selection_proxy-code-50b8f7c690bb",
+  "shard_path": "shards/selection_proxy-code-50b8f7c690bb.jsonl",
+  "split": "selection_proxy",
+  "token_count": 49,
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}
