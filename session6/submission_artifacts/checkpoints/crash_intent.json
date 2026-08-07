@@ -1,0 +1,8 @@
+{
+  "checkpoint": "checkpoints/checkpoint_step_0004.pt",
+  "expected_batch_id": "batch-0004-d00ab8437665c04b",
+  "expected_batch_index": 4,
+  "expected_source_span_hash": "0b39415dd275f4632f296e65ef80188d0cd0aafa513139f2ce7253cc531a2ff7",
+  "expected_tensor_hash": "c3bf4c7a93f2e0205ee62d824be0aebbf5143d9d455d9a44461a09e3c5859683",
+  "schema_version": "v1"
+}

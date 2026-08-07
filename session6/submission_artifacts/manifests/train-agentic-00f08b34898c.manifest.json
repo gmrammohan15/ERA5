@@ -1,0 +1,31 @@
+{
+  "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+  "contamination_checked": true,
+  "content_hash": "00f08b34898cf5966866ea24580ebb06ad8a6a14f1c33e07df4d194d6a41e803",
+  "document_count": 5,
+  "document_ids": [
+    "agent_001",
+    "agent_002",
+    "agent_003",
+    "agent_004",
+    "agent_005"
+  ],
+  "eval_overlap": false,
+  "is_eval": false,
+  "is_selection_proxy": false,
+  "is_validation": false,
+  "lane": "agentic",
+  "languages": [
+    "en"
+  ],
+  "licenses": [
+    "CC0-demo"
+  ],
+  "logical_content_hash": "00f08b34898cf5966866ea24580ebb06ad8a6a14f1c33e07df4d194d6a41e803",
+  "schema_version": "v1",
+  "shard_id": "train-agentic-00f08b34898c",
+  "shard_path": "shards/train-agentic-00f08b34898c.jsonl",
+  "split": "train",
+  "token_count": 1000,
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}

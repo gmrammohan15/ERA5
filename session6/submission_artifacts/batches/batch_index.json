@@ -1,0 +1,64 @@
+{
+  "batches": [
+    {
+      "batch_id": "batch-0000-dd106dcf7a642041",
+      "batch_index": 0,
+      "tensor_hash": "aca4a5f4f340c6ec5cbe2fff929b54fe2c36cb8d04ec8a5eca40e5bc987cb438"
+    },
+    {
+      "batch_id": "batch-0001-3e91f120cc0f88ac",
+      "batch_index": 1,
+      "tensor_hash": "508f8cba3e368aef7f4696ed4851cc122e7b66c162f7ed44205be1803bb13126"
+    },
+    {
+      "batch_id": "batch-0002-2fa95ae3c06636d5",
+      "batch_index": 2,
+      "tensor_hash": "6913a3896e38024f0b889be0f268d70d27b5eef02b93feebfaa0a50e415f6877"
+    },
+    {
+      "batch_id": "batch-0003-9e15896e80e4437c",
+      "batch_index": 3,
+      "tensor_hash": "8a79fc6b800dce12d50fedc39baa529aeccafa235bfe02ed5416d604cb240c79"
+    },
+    {
+      "batch_id": "batch-0004-d00ab8437665c04b",
+      "batch_index": 4,
+      "tensor_hash": "c3bf4c7a93f2e0205ee62d824be0aebbf5143d9d455d9a44461a09e3c5859683"
+    },
+    {
+      "batch_id": "batch-0005-e08f3b6de5d22b30",
+      "batch_index": 5,
+      "tensor_hash": "a697a9a4bf3d733f0328eaa1110ebc0c3bfaf2b67fa247693e52c554870fa8a0"
+    },
+    {
+      "batch_id": "batch-0006-463d675b5e4da80a",
+      "batch_index": 6,
+      "tensor_hash": "7c8e7cb56034501cd3c56bae1a884186c6d7e35fd90298a5193ba3170a33149b"
+    },
+    {
+      "batch_id": "batch-0007-cdc8e6208e898870",
+      "batch_index": 7,
+      "tensor_hash": "7bdc02a713fddae14c7e5b55fdc1bebafced604646e408eca2c72e400cdab73e"
+    },
+    {
+      "batch_id": "batch-0008-f243d04c4af2c342",
+      "batch_index": 8,
+      "tensor_hash": "451e52616a5a92c1a709c0284f2bf9c7895dd3854501a5eae196f0399d23d876"
+    },
+    {
+      "batch_id": "batch-0009-205dead216b8d685",
+      "batch_index": 9,
+      "tensor_hash": "edf8bb4e66e2b1c81ea55f89dab2e349c640b1e8b825e6c0d54c81eec9e60d1a"
+    },
+    {
+      "batch_id": "batch-0010-7dfa232a6450a45d",
+      "batch_index": 10,
+      "tensor_hash": "df549d4b85491b45bff708b57f0f4c9962f5fe91c39c572275cbcf3b1c3f3107"
+    },
+    {
+      "batch_id": "batch-0011-2d9514949d6e027b",
+      "batch_index": 11,
+      "tensor_hash": "bd8f3389c27c5f9b8a3e7370f6cd526e7a76726b2f0a717ea2ccbe380b3fc278"
+    }
+  ]
+}

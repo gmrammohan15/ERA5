@@ -1,0 +1,11 @@
+{
+  "schema_version": "v1",
+  "type": "utf8_byte",
+  "special_tokens": {
+    "pad": 0,
+    "bos": 1,
+    "eos": 2
+  },
+  "byte_offset": 3,
+  "vocab_size": 259
+}

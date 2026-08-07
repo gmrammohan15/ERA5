@@ -1,0 +1,17 @@
+{
+  "branch_batch_ids": [
+    "batch-0004-8b9d598b5b682fd1",
+    "batch-0005-2d6b7b7a93f7ef0b"
+  ],
+  "branch_diverged": true,
+  "branch_ledger_chain_valid": true,
+  "fork_ledger_offset": 4,
+  "initial_model_hash_matched": true,
+  "parent_checkpoint": "checkpoints/checkpoint_step_0004.pt",
+  "parent_checkpoint_hash": "850b159af1d8983a42e841523a5d3312aa183f7838e0ca9c36dd5181d79b4a94",
+  "parent_future_batch_ids": [
+    "batch-0004-d00ab8437665c04b",
+    "batch-0005-e08f3b6de5d22b30"
+  ],
+  "schema_version": "v1"
+}

@@ -1,0 +1,2 @@
+{"doc_id":"eval_001","mean_loss":4.785594463348389,"model_state_hash":"d05c7cd37838d929d5d5768ac2983fea37d1ee89affe563db9011490838a9276","optimizer_update":false,"shard_id":"eval-reasoning-7c124dcc2cf4","split":"eval"}
+{"doc_id":"valid_001","mean_loss":4.8031392097473145,"model_state_hash":"d05c7cd37838d929d5d5768ac2983fea37d1ee89affe563db9011490838a9276","optimizer_update":false,"shard_id":"validation-general_web-5c9b11b352e7","split":"validation"}

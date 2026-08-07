@@ -1,0 +1,27 @@
+{
+  "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+  "contamination_checked": true,
+  "content_hash": "4a7c599745a0c9d8fbb2ae84565ac30a7d568bed47e442e1058c1bf657482c92",
+  "document_count": 1,
+  "document_ids": [
+    "proxy_web"
+  ],
+  "eval_overlap": false,
+  "is_eval": false,
+  "is_selection_proxy": true,
+  "is_validation": false,
+  "lane": "general_web",
+  "languages": [
+    "en"
+  ],
+  "licenses": [
+    "CC0-demo"
+  ],
+  "logical_content_hash": "4a7c599745a0c9d8fbb2ae84565ac30a7d568bed47e442e1058c1bf657482c92",
+  "schema_version": "v1",
+  "shard_id": "selection_proxy-general_web-4a7c599745a0",
+  "shard_path": "shards/selection_proxy-general_web-4a7c599745a0.jsonl",
+  "split": "selection_proxy",
+  "token_count": 56,
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}

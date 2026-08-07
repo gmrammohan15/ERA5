@@ -1,0 +1,31 @@
+{
+  "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+  "contamination_checked": true,
+  "content_hash": "215bab4f78efca0dc3f915288082a39e559ca24b607efd5122d9a41341eb8e8d",
+  "document_count": 5,
+  "document_ids": [
+    "reason_001",
+    "reason_002",
+    "reason_003",
+    "reason_004",
+    "reason_005"
+  ],
+  "eval_overlap": false,
+  "is_eval": false,
+  "is_selection_proxy": false,
+  "is_validation": false,
+  "lane": "reasoning",
+  "languages": [
+    "en"
+  ],
+  "licenses": [
+    "CC0-demo"
+  ],
+  "logical_content_hash": "215bab4f78efca0dc3f915288082a39e559ca24b607efd5122d9a41341eb8e8d",
+  "schema_version": "v1",
+  "shard_id": "train-reasoning-215bab4f78ef",
+  "shard_path": "shards/train-reasoning-215bab4f78ef.jsonl",
+  "split": "train",
+  "token_count": 552,
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}

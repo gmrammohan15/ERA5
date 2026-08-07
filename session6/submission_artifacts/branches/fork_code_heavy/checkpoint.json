@@ -1,0 +1,20 @@
+{
+  "branch_ledger_head_hash": "f77f7da1c86a447fa13395dc415a47c4b80dac1d992716a5dae80663fd02e268",
+  "checkpoint_file_hash": "2eb10e3b1d6637eccca731cbd0fe132371785f26ece70d1d3b0f059db52cfab3",
+  "final_model_state_hash": "6da6221b5e0778eebffb849043632055c27b114d531566e0cce6f7882500445e",
+  "fork_ledger_offset": 4,
+  "initial_model_state_hash": "997f2fae0998c2d07cbee90d5d4d6482ac48c92afea08d2600177358e316ee41",
+  "mixture": {
+    "agentic": 0.125,
+    "code": 0.5,
+    "general_web": 0.125,
+    "indic": 0.125,
+    "reasoning": 0.125
+  },
+  "next_batch_index": 6,
+  "parent_checkpoint_hash": "850b159af1d8983a42e841523a5d3312aa183f7838e0ca9c36dd5181d79b4a94",
+  "parent_ledger_head_hash": "820fb6a2bc229c1866df9666599ad418d12a2a9b1b1b2351810a32ac261e6305",
+  "parent_run_id": "run-761ef330a79730e7",
+  "run_id": "run-761ef330a79730e7-fork-code-heavy",
+  "schema_version": "v1"
+}

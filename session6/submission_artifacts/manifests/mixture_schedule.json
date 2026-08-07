@@ -1,0 +1,240 @@
+{
+  "schedule_hash": "2eb99c37984cf1862bc04995817b02ec22a9d6b3fc2cdd4cc4c633b8d6ed874b",
+  "schema_version": "v1",
+  "stages": [
+    {
+      "actual_sequence_counts": {
+        "agentic": 4,
+        "code": 4,
+        "general_web": 14,
+        "indic": 6,
+        "reasoning": 4
+      },
+      "actual_shares": {
+        "agentic": 0.125,
+        "code": 0.125,
+        "general_web": 0.4375,
+        "indic": 0.1875,
+        "reasoning": 0.125
+      },
+      "batches": [
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "general_web",
+          "code",
+          "general_web",
+          "indic"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "general_web",
+          "general_web",
+          "code",
+          "general_web"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "general_web",
+          "code",
+          "general_web",
+          "indic"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "general_web",
+          "general_web",
+          "code",
+          "general_web"
+        ]
+      ],
+      "per_batch_floor_counts": {
+        "agentic": 1,
+        "indic": 1,
+        "reasoning": 1
+      },
+      "planned_sequence_counts": {
+        "agentic": 4,
+        "code": 4,
+        "general_web": 14,
+        "indic": 6,
+        "reasoning": 4
+      },
+      "planned_weights": {
+        "agentic": 0.1,
+        "code": 0.15,
+        "general_web": 0.45,
+        "indic": 0.2,
+        "reasoning": 0.1
+      },
+      "stage": "foundation"
+    },
+    {
+      "actual_sequence_counts": {
+        "agentic": 5,
+        "code": 9,
+        "general_web": 8,
+        "indic": 5,
+        "reasoning": 5
+      },
+      "actual_shares": {
+        "agentic": 0.15625,
+        "code": 0.28125,
+        "general_web": 0.25,
+        "indic": 0.15625,
+        "reasoning": 0.15625
+      },
+      "batches": [
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "code",
+          "general_web",
+          "code",
+          "general_web",
+          "code"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "code",
+          "general_web",
+          "code",
+          "reasoning"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "code",
+          "code",
+          "general_web",
+          "indic"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "code",
+          "general_web",
+          "code",
+          "general_web",
+          "agentic"
+        ]
+      ],
+      "per_batch_floor_counts": {
+        "agentic": 1,
+        "indic": 1,
+        "reasoning": 1
+      },
+      "planned_sequence_counts": {
+        "agentic": 5,
+        "code": 9,
+        "general_web": 8,
+        "indic": 5,
+        "reasoning": 5
+      },
+      "planned_weights": {
+        "agentic": 0.15,
+        "code": 0.3,
+        "general_web": 0.25,
+        "indic": 0.15,
+        "reasoning": 0.15
+      },
+      "stage": "skill_growth"
+    },
+    {
+      "actual_sequence_counts": {
+        "agentic": 6,
+        "code": 6,
+        "general_web": 6,
+        "indic": 7,
+        "reasoning": 7
+      },
+      "actual_shares": {
+        "agentic": 0.1875,
+        "code": 0.1875,
+        "general_web": 0.1875,
+        "indic": 0.21875,
+        "reasoning": 0.21875
+      },
+      "batches": [
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "code",
+          "reasoning",
+          "indic",
+          "general_web"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "code",
+          "general_web",
+          "code",
+          "agentic",
+          "reasoning"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "code",
+          "indic",
+          "general_web",
+          "code"
+        ],
+        [
+          "indic",
+          "agentic",
+          "reasoning",
+          "general_web",
+          "code",
+          "agentic",
+          "reasoning",
+          "indic"
+        ]
+      ],
+      "per_batch_floor_counts": {
+        "agentic": 1,
+        "indic": 1,
+        "reasoning": 1
+      },
+      "planned_sequence_counts": {
+        "agentic": 6,
+        "code": 6,
+        "general_web": 6,
+        "indic": 7,
+        "reasoning": 7
+      },
+      "planned_weights": {
+        "agentic": 0.2,
+        "code": 0.2,
+        "general_web": 0.2,
+        "indic": 0.2,
+        "reasoning": 0.2
+      },
+      "stage": "anneal"
+    }
+  ]
+}

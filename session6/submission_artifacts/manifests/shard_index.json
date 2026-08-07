@@ -1,0 +1,308 @@
+{
+  "index_hash": "34749ef8177275a4ba7e3bc38ae8e8253f3f4fb803c4266eb30f2141196dc598",
+  "schema_version": "v1",
+  "shards": [
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "7c124dcc2cf4b8d4fb3fe3061d8868fe2d6c7204371f099ac46fa32faead7a86",
+      "document_count": 1,
+      "document_ids": [
+        "eval_001"
+      ],
+      "eval_overlap": false,
+      "is_eval": true,
+      "is_selection_proxy": false,
+      "is_validation": false,
+      "lane": "reasoning",
+      "languages": [
+        "en"
+      ],
+      "licenses": [
+        "CC0-demo"
+      ],
+      "logical_content_hash": "7c124dcc2cf4b8d4fb3fe3061d8868fe2d6c7204371f099ac46fa32faead7a86",
+      "manifest": "manifests/eval-reasoning-7c124dcc2cf4.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "eval-reasoning-7c124dcc2cf4",
+      "shard_path": "shards/eval-reasoning-7c124dcc2cf4.jsonl",
+      "split": "eval",
+      "token_count": 73,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "50b8f7c690bbe36bbe227493c24b02ac19fec70aee8f2c2d8fd8a4b3813678a6",
+      "document_count": 1,
+      "document_ids": [
+        "proxy_code"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": true,
+      "is_validation": false,
+      "lane": "code",
+      "languages": [
+        "python"
+      ],
+      "licenses": [
+        "MIT-demo"
+      ],
+      "logical_content_hash": "50b8f7c690bbe36bbe227493c24b02ac19fec70aee8f2c2d8fd8a4b3813678a6",
+      "manifest": "manifests/selection_proxy-code-50b8f7c690bb.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "selection_proxy-code-50b8f7c690bb",
+      "shard_path": "shards/selection_proxy-code-50b8f7c690bb.jsonl",
+      "split": "selection_proxy",
+      "token_count": 49,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "4a7c599745a0c9d8fbb2ae84565ac30a7d568bed47e442e1058c1bf657482c92",
+      "document_count": 1,
+      "document_ids": [
+        "proxy_web"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": true,
+      "is_validation": false,
+      "lane": "general_web",
+      "languages": [
+        "en"
+      ],
+      "licenses": [
+        "CC0-demo"
+      ],
+      "logical_content_hash": "4a7c599745a0c9d8fbb2ae84565ac30a7d568bed47e442e1058c1bf657482c92",
+      "manifest": "manifests/selection_proxy-general_web-4a7c599745a0.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "selection_proxy-general_web-4a7c599745a0",
+      "shard_path": "shards/selection_proxy-general_web-4a7c599745a0.jsonl",
+      "split": "selection_proxy",
+      "token_count": 56,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "fab44f7f5d9a891fcf58896b89fd5815620abef5e7c2de39d6254e7626150263",
+      "document_count": 1,
+      "document_ids": [
+        "proxy_indic"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": true,
+      "is_validation": false,
+      "lane": "indic",
+      "languages": [
+        "hi"
+      ],
+      "licenses": [
+        "CC0-demo"
+      ],
+      "logical_content_hash": "fab44f7f5d9a891fcf58896b89fd5815620abef5e7c2de39d6254e7626150263",
+      "manifest": "manifests/selection_proxy-indic-fab44f7f5d9a.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "selection_proxy-indic-fab44f7f5d9a",
+      "shard_path": "shards/selection_proxy-indic-fab44f7f5d9a.jsonl",
+      "split": "selection_proxy",
+      "token_count": 116,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "00f08b34898cf5966866ea24580ebb06ad8a6a14f1c33e07df4d194d6a41e803",
+      "document_count": 5,
+      "document_ids": [
+        "agent_001",
+        "agent_002",
+        "agent_003",
+        "agent_004",
+        "agent_005"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": false,
+      "is_validation": false,
+      "lane": "agentic",
+      "languages": [
+        "en"
+      ],
+      "licenses": [
+        "CC0-demo"
+      ],
+      "logical_content_hash": "00f08b34898cf5966866ea24580ebb06ad8a6a14f1c33e07df4d194d6a41e803",
+      "manifest": "manifests/train-agentic-00f08b34898c.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "train-agentic-00f08b34898c",
+      "shard_path": "shards/train-agentic-00f08b34898c.jsonl",
+      "split": "train",
+      "token_count": 1000,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "0421dc162970f580b185c20b8c4ebedefc9f45eceacbe6dc4e2ddae0f45efb0e",
+      "document_count": 5,
+      "document_ids": [
+        "code_001",
+        "code_002",
+        "code_003",
+        "code_004",
+        "code_005"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": false,
+      "is_validation": false,
+      "lane": "code",
+      "languages": [
+        "python"
+      ],
+      "licenses": [
+        "MIT-demo"
+      ],
+      "logical_content_hash": "0421dc162970f580b185c20b8c4ebedefc9f45eceacbe6dc4e2ddae0f45efb0e",
+      "manifest": "manifests/train-code-0421dc162970.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "train-code-0421dc162970",
+      "shard_path": "shards/train-code-0421dc162970.jsonl",
+      "split": "train",
+      "token_count": 546,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "874d006e50f7f8235b83d6677f5b6d9df2405d62baf5158769068fb6058fccf4",
+      "document_count": 5,
+      "document_ids": [
+        "web_001",
+        "web_002",
+        "web_003",
+        "web_004",
+        "web_005"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": false,
+      "is_validation": false,
+      "lane": "general_web",
+      "languages": [
+        "en"
+      ],
+      "licenses": [
+        "CC0-demo"
+      ],
+      "logical_content_hash": "874d006e50f7f8235b83d6677f5b6d9df2405d62baf5158769068fb6058fccf4",
+      "manifest": "manifests/train-general_web-874d006e50f7.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "train-general_web-874d006e50f7",
+      "shard_path": "shards/train-general_web-874d006e50f7.jsonl",
+      "split": "train",
+      "token_count": 532,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "61eed9edededcb18119589d35c579cf4f4c2b124b882060a948547e9bd2b646a",
+      "document_count": 5,
+      "document_ids": [
+        "indic_001",
+        "indic_002",
+        "indic_003",
+        "indic_004",
+        "indic_005"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": false,
+      "is_validation": false,
+      "lane": "indic",
+      "languages": [
+        "hi",
+        "kn",
+        "te"
+      ],
+      "licenses": [
+        "CC0-demo"
+      ],
+      "logical_content_hash": "61eed9edededcb18119589d35c579cf4f4c2b124b882060a948547e9bd2b646a",
+      "manifest": "manifests/train-indic-61eed9ededed.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "train-indic-61eed9ededed",
+      "shard_path": "shards/train-indic-61eed9ededed.jsonl",
+      "split": "train",
+      "token_count": 727,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "215bab4f78efca0dc3f915288082a39e559ca24b607efd5122d9a41341eb8e8d",
+      "document_count": 5,
+      "document_ids": [
+        "reason_001",
+        "reason_002",
+        "reason_003",
+        "reason_004",
+        "reason_005"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": false,
+      "is_validation": false,
+      "lane": "reasoning",
+      "languages": [
+        "en"
+      ],
+      "licenses": [
+        "CC0-demo"
+      ],
+      "logical_content_hash": "215bab4f78efca0dc3f915288082a39e559ca24b607efd5122d9a41341eb8e8d",
+      "manifest": "manifests/train-reasoning-215bab4f78ef.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "train-reasoning-215bab4f78ef",
+      "shard_path": "shards/train-reasoning-215bab4f78ef.jsonl",
+      "split": "train",
+      "token_count": 552,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    },
+    {
+      "cleaning_hash": "8290f264dd1e84c09847b656e1d6cea652de2e218169d7a80dbf653256a0c581",
+      "contamination_checked": true,
+      "content_hash": "5c9b11b352e72fb17a0346bd97e7ad676ec434a7f5e3bea57fbc7a2cda2f5074",
+      "document_count": 1,
+      "document_ids": [
+        "valid_001"
+      ],
+      "eval_overlap": false,
+      "is_eval": false,
+      "is_selection_proxy": false,
+      "is_validation": true,
+      "lane": "general_web",
+      "languages": [
+        "en"
+      ],
+      "licenses": [
+        "CC0-demo"
+      ],
+      "logical_content_hash": "5c9b11b352e72fb17a0346bd97e7ad676ec434a7f5e3bea57fbc7a2cda2f5074",
+      "manifest": "manifests/validation-general_web-5c9b11b352e7.manifest.json",
+      "schema_version": "v1",
+      "shard_id": "validation-general_web-5c9b11b352e7",
+      "shard_path": "shards/validation-general_web-5c9b11b352e7.jsonl",
+      "split": "validation",
+      "token_count": 64,
+      "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "checkpoint_file": "checkpoints/checkpoint_genesis.pt",
+  "checkpoint_file_hash": "ddff729129f6b9545af2cb80c973d1b5b5ac088872eda9f1e6df8fd297082d72",
+  "config_hash": "130d36dfe6582f4804b325e42fda15c2eff7c978f2a04c96703f79dc001fdb21",
+  "ledger_head_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "ledger_record_count": 0,
+  "manifest_hash": "34749ef8177275a4ba7e3bc38ae8e8253f3f4fb803c4266eb30f2141196dc598",
+  "model_state_hash": "a057ea361d10fbffe897188b21cb209af33781f37f263ba69d4da0dbb707b6e1",
+  "next_batch_index": 0,
+  "parent": null,
+  "run_id": "run-761ef330a79730e7",
+  "schema_version": "v1",
+  "tokenizer_hash": "ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a"
+}

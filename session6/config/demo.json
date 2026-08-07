@@ -1,0 +1,41 @@
+{
+  "schema_version": "v1",
+  "seed": 20260801,
+  "sequence_length": 64,
+  "global_batch_size": 8,
+  "logical_workers": 2,
+  "microbatch_size": 2,
+  "gradient_accumulation_steps": 2,
+  "steps_per_stage": 4,
+  "crash_after_step": 4,
+  "opus_prefix_tokens": 16,
+  "protected_floors": {
+    "indic": 0.08,
+    "agentic": 0.04,
+    "reasoning": 0.03
+  },
+  "stages": [
+    {
+      "name": "foundation",
+      "index": 0,
+      "weights": {"general_web": 0.45, "code": 0.15, "reasoning": 0.10, "agentic": 0.10, "indic": 0.20}
+    },
+    {
+      "name": "skill_growth",
+      "index": 1,
+      "weights": {"general_web": 0.25, "code": 0.30, "reasoning": 0.15, "agentic": 0.15, "indic": 0.15}
+    },
+    {
+      "name": "anneal",
+      "index": 2,
+      "weights": {"general_web": 0.20, "code": 0.20, "reasoning": 0.20, "agentic": 0.20, "indic": 0.20}
+    }
+  ],
+  "model": {
+    "d_model": 32,
+    "n_heads": 4,
+    "ffn_dim": 64,
+    "learning_rate": 0.003,
+    "weight_decay": 0.01
+  }
+}
