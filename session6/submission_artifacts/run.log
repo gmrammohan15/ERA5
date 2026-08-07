@@ -1,0 +1,52 @@
+demo started | seed=20260801; device=cpu
+shards created | count=10
+manifests validated | rows=30
+[PASS] tokenizer_hash_verified | ae1e773d63828f86c3ab2523c9a4f84bdef8613ff19806b81aabfde40198be8a
+evaluation data blocked | mixture_compiler blocked non-train documents: ['eval_001']
+[PASS] eval_shard_blocked | eval-reasoning-7c124dcc2cf4
+mixture compiled | stages=3; batches=12
+OPUS decisions recorded | accepted=30; rejected=5; deferred=40; overrides=18
+batches packed | count=12; sequence_length=64
+checkpoint saved | checkpoint_genesis; next_batch=0; ledger_offset=0
+[PASS] checkpoint_saved | checkpoint_genesis
+training batch committed | step=0; batch=batch-0000-dd106dcf7a642041; loss=5.654056
+training batch committed | step=1; batch=batch-0001-3e91f120cc0f88ac; loss=5.601100
+training batch committed | step=2; batch=batch-0002-2fa95ae3c06636d5; loss=5.489566
+training batch committed | step=3; batch=batch-0003-9e15896e80e4437c; loss=5.482876
+checkpoint saved | checkpoint_step_0004; next_batch=4; ledger_offset=4
+[PASS] checkpoint_saved | checkpoint_step_0004
+crash simulated | exit_code=86; expected_next=batch-0004-d00ab8437665c04b
+run resumed | checkpoint=checkpoint_step_0004.pt; next=batch-0004-d00ab8437665c04b
+[PASS] resume_next_batch_matched | batch-0004-d00ab8437665c04b
+training batch committed | step=4; batch=batch-0004-d00ab8437665c04b; loss=5.373540
+training batch committed | step=5; batch=batch-0005-e08f3b6de5d22b30; loss=5.298938
+training batch committed | step=6; batch=batch-0006-463d675b5e4da80a; loss=5.307041
+training batch committed | step=7; batch=batch-0007-cdc8e6208e898870; loss=5.172432
+training batch committed | step=8; batch=batch-0008-f243d04c4af2c342; loss=5.059150
+training batch committed | step=9; batch=batch-0009-205dead216b8d685; loss=5.003671
+training batch committed | step=10; batch=batch-0010-7dfa232a6450a45d; loss=5.090278
+training batch committed | step=11; batch=batch-0011-2d9514949d6e027b; loss=5.004693
+checkpoint saved | checkpoint_step_0012; next_batch=12; ledger_offset=12
+[PASS] checkpoint_saved | checkpoint_step_0012
+historical stream replayed | interval=0:4; batches=4
+[PASS] replay_hash_matched | batches=4
+branch forked | offset=4; batches=2; code_share=0.5
+validation and evaluation executed | records=2; optimizer_updates=0
+audit completed | checks=15; all_passed=True
+performance measured | performance.json generated from ledger timings
+[PASS] end_to_end | all required execution artifacts exist
+[PASS] tokenizer_integrity | frozen tokenizer hash and multilingual byte round-trips verified
+[PASS] shard_manifest_integrity | all content, tokenizer, cleaning and token-count hashes match
+[PASS] evaluation_firewall | eval and validation were rejected from training and evaluated without parameter updates
+[PASS] packing_correctness | tensor hashes, causal masks, segment boundaries, padding masks and position shapes verified
+[PASS] mixture_compliance | observed stage lane counts equal the compiled schedule
+[PASS] protected_floors | Indic, agentic and reasoning floors hold in every global batch
+[PASS] opus_audit_trail | gradient-alignment decisions include acceptance, rejection, deferral and protected override
+[PASS] consumption_ledger | hash chain, contiguous batch indices and consumption/learning projections verified
+[PASS] learning_trace | real token/sample losses and gradients link back to source documents
+[PASS] checkpoint_integrity | checkpoint model/data state is tied to exact ledger offsets and hashes
+[PASS] crash_recovery | fresh process consumed the exact expected next batch with no skip or duplicate
+[PASS] replay | historical batch ids, token spans, tensor hashes, losses and model hashes match
+[PASS] fork | branch preserves parent checkpoint lineage and diverges under a code-heavy future mixture
+[PASS] throughput | packing and useful-token throughput claims reconstruct from batch and learning records
+[PASS] demo completed | run_id=run-761ef330a79730e7; requirements=13
