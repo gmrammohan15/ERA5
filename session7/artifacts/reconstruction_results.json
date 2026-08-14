@@ -1,0 +1,285 @@
+{
+  "config": {
+    "batch_size": 16,
+    "beam_eval_examples": 256,
+    "beam_width": 5,
+    "byte_embedding_dim": 64,
+    "context_length": 128,
+    "d_model": 128,
+    "decoder_hidden_dim": 128,
+    "eval_tokens_per_language": 24576,
+    "ffn_dim": 512,
+    "grad_clip": 1.0,
+    "input_max_bytes": 32,
+    "learning_rates": [
+      0.0003,
+      0.001
+    ],
+    "n_heads": 4,
+    "n_layers": 2,
+    "noise_levels": [
+      0.0,
+      0.01,
+      0.05,
+      0.1
+    ],
+    "output_max_bytes": 128,
+    "parallel_hidden_dim": 128,
+    "pilot_steps": 122,
+    "pilot_tokens": 250000,
+    "reconstruction_batch_size": 128,
+    "reconstruction_steps": 500,
+    "seeds": [
+      7,
+      17,
+      29
+    ],
+    "steps": 488,
+    "train_tokens": 1000000,
+    "vocab_size": 10000,
+    "warmup_fraction": 0.05,
+    "weight_decay": 0.01
+  },
+  "config_fingerprint": "d8dfc772972ced04",
+  "profile": "full",
+  "result": {
+    "direct_k32_prefix_reconstruction_accuracy": 0.97047047,
+    "held_out_short_items": 1939,
+    "held_out_vocabulary_items": 1998,
+    "models": [
+      {
+        "architecture": "parallel_byte",
+        "curve": [
+          {
+            "loss": 69.66590881,
+            "step": 1
+          },
+          {
+            "loss": 36.19403458,
+            "step": 50
+          },
+          {
+            "loss": 28.51678658,
+            "step": 100
+          },
+          {
+            "loss": 26.93006516,
+            "step": 150
+          },
+          {
+            "loss": 21.87098312,
+            "step": 200
+          },
+          {
+            "loss": 22.68062592,
+            "step": 250
+          },
+          {
+            "loss": 21.91950989,
+            "step": 300
+          },
+          {
+            "loss": 18.25294685,
+            "step": 350
+          },
+          {
+            "loss": 21.15824318,
+            "step": 400
+          },
+          {
+            "loss": 17.81316757,
+            "step": 450
+          },
+          {
+            "loss": 15.72141266,
+            "step": 500
+          }
+        ],
+        "encoder_parameters": 1048576,
+        "head_parameters": 66177,
+        "held_out_vocabulary_items": 1998,
+        "noise_results": {
+          "0.0": {
+            "codebook_cosine_accuracy": 0.98948949,
+            "exact_accuracy": 0.02502503,
+            "known_vocab_rate": 0.22022022,
+            "long_tokens": {
+              "exact_accuracy": 0.0,
+              "tokens": 59
+            },
+            "short_tokens": {
+              "exact_accuracy": 0.02578649,
+              "tokens": 1939
+            },
+            "tokens": 1998,
+            "valid_utf8_rate": 0.87937938
+          },
+          "0.01": {
+            "codebook_cosine_accuracy": 0.98948949,
+            "exact_accuracy": 0.02452452,
+            "known_vocab_rate": 0.22172172,
+            "long_tokens": {
+              "exact_accuracy": 0.0,
+              "tokens": 59
+            },
+            "short_tokens": {
+              "exact_accuracy": 0.02527076,
+              "tokens": 1939
+            },
+            "tokens": 1998,
+            "valid_utf8_rate": 0.87937938
+          },
+          "0.05": {
+            "codebook_cosine_accuracy": 0.98948949,
+            "exact_accuracy": 0.02352352,
+            "known_vocab_rate": 0.22072072,
+            "long_tokens": {
+              "exact_accuracy": 0.0,
+              "tokens": 59
+            },
+            "short_tokens": {
+              "exact_accuracy": 0.0242393,
+              "tokens": 1939
+            },
+            "tokens": 1998,
+            "valid_utf8_rate": 0.87987988
+          },
+          "0.1": {
+            "codebook_cosine_accuracy": 0.98948949,
+            "exact_accuracy": 0.02602603,
+            "known_vocab_rate": 0.22472472,
+            "long_tokens": {
+              "exact_accuracy": 0.0,
+              "tokens": 59
+            },
+            "short_tokens": {
+              "exact_accuracy": 0.02681795,
+              "tokens": 1939
+            },
+            "tokens": 1998,
+            "valid_utf8_rate": 0.87637638
+          }
+        },
+        "train_vocabulary_items": 8002
+      },
+      {
+        "architecture": "autoregressive_byte",
+        "curve": [
+          {
+            "loss": 66.92843628,
+            "step": 1
+          },
+          {
+            "loss": 28.18896294,
+            "step": 50
+          },
+          {
+            "loss": 21.42553902,
+            "step": 100
+          },
+          {
+            "loss": 16.89969635,
+            "step": 150
+          },
+          {
+            "loss": 16.03169823,
+            "step": 200
+          },
+          {
+            "loss": 14.97638893,
+            "step": 250
+          },
+          {
+            "loss": 15.81450272,
+            "step": 300
+          },
+          {
+            "loss": 15.85479927,
+            "step": 350
+          },
+          {
+            "loss": 12.20951176,
+            "step": 400
+          },
+          {
+            "loss": 12.96114445,
+            "step": 450
+          },
+          {
+            "loss": 11.06669235,
+            "step": 500
+          }
+        ],
+        "encoder_parameters": 1048576,
+        "head_parameters": 140673,
+        "held_out_vocabulary_items": 1998,
+        "noise_results": {
+          "0.0": {
+            "codebook_cosine_accuracy": 0.98948949,
+            "exact_accuracy": 0.04404404,
+            "known_vocab_rate": 0.41391391,
+            "long_tokens": {
+              "exact_accuracy": 0.0,
+              "tokens": 59
+            },
+            "short_tokens": {
+              "exact_accuracy": 0.04538422,
+              "tokens": 1939
+            },
+            "tokens": 1998,
+            "valid_utf8_rate": 0.9994995
+          },
+          "0.01": {
+            "codebook_cosine_accuracy": 0.98948949,
+            "exact_accuracy": 0.04404404,
+            "known_vocab_rate": 0.41441441,
+            "long_tokens": {
+              "exact_accuracy": 0.0,
+              "tokens": 59
+            },
+            "short_tokens": {
+              "exact_accuracy": 0.04538422,
+              "tokens": 1939
+            },
+            "tokens": 1998,
+            "valid_utf8_rate": 0.9994995
+          },
+          "0.05": {
+            "codebook_cosine_accuracy": 0.98948949,
+            "exact_accuracy": 0.04354354,
+            "known_vocab_rate": 0.41541542,
+            "long_tokens": {
+              "exact_accuracy": 0.0,
+              "tokens": 59
+            },
+            "short_tokens": {
+              "exact_accuracy": 0.04486849,
+              "tokens": 1939
+            },
+            "tokens": 1998,
+            "valid_utf8_rate": 1.0
+          },
+          "0.1": {
+            "codebook_cosine_accuracy": 0.98948949,
+            "exact_accuracy": 0.04304304,
+            "known_vocab_rate": 0.41741742,
+            "long_tokens": {
+              "exact_accuracy": 0.0,
+              "tokens": 59
+            },
+            "short_tokens": {
+              "exact_accuracy": 0.04435276,
+              "tokens": 1939
+            },
+            "tokens": 1998,
+            "valid_utf8_rate": 0.9994995
+          }
+        },
+        "train_vocabulary_items": 8002
+      }
+    ],
+    "note": "Direct K32 inversion is exact only for held-out forms of at most 32 bytes. Cosine codebook recovery stores and searches all vocabulary vectors; it is an accuracy upper baseline, not a head-free solution.",
+    "seed": 7,
+    "train_vocabulary_items": 8002
+  }
+}
