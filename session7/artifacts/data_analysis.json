@@ -1,0 +1,82 @@
+{
+  "codec_roundtrip": true,
+  "config": {
+    "batch_size": 16,
+    "beam_eval_examples": 256,
+    "beam_width": 5,
+    "byte_embedding_dim": 64,
+    "context_length": 128,
+    "d_model": 128,
+    "decoder_hidden_dim": 128,
+    "eval_tokens_per_language": 24576,
+    "ffn_dim": 512,
+    "grad_clip": 1.0,
+    "input_max_bytes": 32,
+    "learning_rates": [
+      0.0003,
+      0.001
+    ],
+    "n_heads": 4,
+    "n_layers": 2,
+    "noise_levels": [
+      0.0,
+      0.01,
+      0.05,
+      0.1
+    ],
+    "output_max_bytes": 128,
+    "parallel_hidden_dim": 128,
+    "pilot_steps": 122,
+    "pilot_tokens": 250000,
+    "reconstruction_batch_size": 128,
+    "reconstruction_steps": 500,
+    "seeds": [
+      7,
+      17,
+      29
+    ],
+    "steps": 488,
+    "train_tokens": 1000000,
+    "vocab_size": 10000,
+    "warmup_fraction": 0.05,
+    "weight_decay": 0.01
+  },
+  "config_fingerprint": "d8dfc772972ced04",
+  "observed_token_lengths": {
+    "en": {
+      "maximum_bytes": 55,
+      "over_32_fraction": 0.00581423,
+      "over_32_tokens": 736,
+      "tokens": 126586
+    },
+    "hi": {
+      "maximum_bytes": 89,
+      "over_32_fraction": 0.00998788,
+      "over_32_tokens": 577,
+      "tokens": 57770
+    },
+    "kn": {
+      "maximum_bytes": 68,
+      "over_32_fraction": 0.01217137,
+      "over_32_tokens": 100,
+      "tokens": 8216
+    },
+    "te": {
+      "maximum_bytes": 80,
+      "over_32_fraction": 0.01946619,
+      "over_32_tokens": 450,
+      "tokens": 23117
+    }
+  },
+  "profile": "full",
+  "vocabulary_items": 10000,
+  "vocabulary_length_buckets": {
+    "17-32": 1541,
+    "33-64": 288,
+    "65-128": 12,
+    "9-16": 3009,
+    "<=8": 5150
+  },
+  "vocabulary_max_bytes": 115,
+  "vocabulary_over_32": 300
+}
