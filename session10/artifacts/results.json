@@ -1,0 +1,562 @@
+{
+  "config": {
+    "device": "cpu",
+    "seed": 10,
+    "vocab_size": 28,
+    "block_size": 32,
+    "n_embd": 64,
+    "n_head": 4,
+    "n_layer": 2
+  },
+  "parameters": [
+    {
+      "name": "token_embedding.weight",
+      "shape": [
+        28,
+        64
+      ],
+      "parameters": 1792,
+      "trainable": true
+    },
+    {
+      "name": "position_embedding.weight",
+      "shape": [
+        32,
+        64
+      ],
+      "parameters": 2048,
+      "trainable": true
+    },
+    {
+      "name": "blocks.0.ln1.weight",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "blocks.0.ln1.bias",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "blocks.0.attn.qkv.weight",
+      "shape": [
+        192,
+        64
+      ],
+      "parameters": 12288,
+      "trainable": true
+    },
+    {
+      "name": "blocks.0.attn.proj.weight",
+      "shape": [
+        64,
+        64
+      ],
+      "parameters": 4096,
+      "trainable": true
+    },
+    {
+      "name": "blocks.0.ln2.weight",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "blocks.0.ln2.bias",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "blocks.0.mlp.fc.weight",
+      "shape": [
+        256,
+        64
+      ],
+      "parameters": 16384,
+      "trainable": true
+    },
+    {
+      "name": "blocks.0.mlp.proj.weight",
+      "shape": [
+        64,
+        256
+      ],
+      "parameters": 16384,
+      "trainable": true
+    },
+    {
+      "name": "blocks.1.ln1.weight",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "blocks.1.ln1.bias",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "blocks.1.attn.qkv.weight",
+      "shape": [
+        192,
+        64
+      ],
+      "parameters": 12288,
+      "trainable": true
+    },
+    {
+      "name": "blocks.1.attn.proj.weight",
+      "shape": [
+        64,
+        64
+      ],
+      "parameters": 4096,
+      "trainable": true
+    },
+    {
+      "name": "blocks.1.ln2.weight",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "blocks.1.ln2.bias",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "blocks.1.mlp.fc.weight",
+      "shape": [
+        256,
+        64
+      ],
+      "parameters": 16384,
+      "trainable": true
+    },
+    {
+      "name": "blocks.1.mlp.proj.weight",
+      "shape": [
+        64,
+        256
+      ],
+      "parameters": 16384,
+      "trainable": true
+    },
+    {
+      "name": "final_norm.weight",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "final_norm.bias",
+      "shape": [
+        64
+      ],
+      "parameters": 64,
+      "trainable": true
+    },
+    {
+      "name": "lm_head.weight",
+      "shape": [
+        28,
+        64
+      ],
+      "parameters": 1792,
+      "trainable": true
+    }
+  ],
+  "shape_trace": [
+    {
+      "name": "tokens",
+      "shape": [
+        1,
+        11
+      ],
+      "meaning": "B,T: integer token ids"
+    },
+    {
+      "name": "token_embedding",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: learned token vectors"
+    },
+    {
+      "name": "position_embedding",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "1,T,C: broadcastable position vectors"
+    },
+    {
+      "name": "embedding_sum",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: token plus position representation"
+    },
+    {
+      "name": "blocks.0.attn.qkv",
+      "shape": [
+        1,
+        11,
+        192
+      ],
+      "meaning": "B,T,3C: concatenated query/key/value"
+    },
+    {
+      "name": "blocks.0.attn.Q",
+      "shape": [
+        1,
+        4,
+        11,
+        16
+      ],
+      "meaning": "B,H,T,Dh: query per attention head"
+    },
+    {
+      "name": "blocks.0.attn.K",
+      "shape": [
+        1,
+        4,
+        11,
+        16
+      ],
+      "meaning": "B,H,T,Dh: key per attention head"
+    },
+    {
+      "name": "blocks.0.attn.V",
+      "shape": [
+        1,
+        4,
+        11,
+        16
+      ],
+      "meaning": "B,H,T,Dh: value per attention head"
+    },
+    {
+      "name": "blocks.0.attn.scores",
+      "shape": [
+        1,
+        4,
+        11,
+        11
+      ],
+      "meaning": "B,H,T,T: token-to-token attention scores"
+    },
+    {
+      "name": "blocks.0.attn.causal_mask",
+      "shape": [
+        11,
+        11
+      ],
+      "meaning": "T,T: True entries block future-token attention"
+    },
+    {
+      "name": "blocks.0.attn.weights",
+      "shape": [
+        1,
+        4,
+        11,
+        11
+      ],
+      "meaning": "B,H,T,T: causal attention probabilities"
+    },
+    {
+      "name": "blocks.0.attn.context",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: heads concatenated"
+    },
+    {
+      "name": "blocks.0.attn.output",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: attention projection"
+    },
+    {
+      "name": "blocks.0.mlp.up",
+      "shape": [
+        1,
+        11,
+        256
+      ],
+      "meaning": "B,T,4C: feed-forward expansion"
+    },
+    {
+      "name": "blocks.0.mlp.gelu",
+      "shape": [
+        1,
+        11,
+        256
+      ],
+      "meaning": "B,T,4C: nonlinear activation"
+    },
+    {
+      "name": "blocks.0.mlp.down",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: feed-forward compression"
+    },
+    {
+      "name": "blocks.0.output",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: residual block output"
+    },
+    {
+      "name": "blocks.1.attn.qkv",
+      "shape": [
+        1,
+        11,
+        192
+      ],
+      "meaning": "B,T,3C: concatenated query/key/value"
+    },
+    {
+      "name": "blocks.1.attn.Q",
+      "shape": [
+        1,
+        4,
+        11,
+        16
+      ],
+      "meaning": "B,H,T,Dh: query per attention head"
+    },
+    {
+      "name": "blocks.1.attn.K",
+      "shape": [
+        1,
+        4,
+        11,
+        16
+      ],
+      "meaning": "B,H,T,Dh: key per attention head"
+    },
+    {
+      "name": "blocks.1.attn.V",
+      "shape": [
+        1,
+        4,
+        11,
+        16
+      ],
+      "meaning": "B,H,T,Dh: value per attention head"
+    },
+    {
+      "name": "blocks.1.attn.scores",
+      "shape": [
+        1,
+        4,
+        11,
+        11
+      ],
+      "meaning": "B,H,T,T: token-to-token attention scores"
+    },
+    {
+      "name": "blocks.1.attn.causal_mask",
+      "shape": [
+        11,
+        11
+      ],
+      "meaning": "T,T: True entries block future-token attention"
+    },
+    {
+      "name": "blocks.1.attn.weights",
+      "shape": [
+        1,
+        4,
+        11,
+        11
+      ],
+      "meaning": "B,H,T,T: causal attention probabilities"
+    },
+    {
+      "name": "blocks.1.attn.context",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: heads concatenated"
+    },
+    {
+      "name": "blocks.1.attn.output",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: attention projection"
+    },
+    {
+      "name": "blocks.1.mlp.up",
+      "shape": [
+        1,
+        11,
+        256
+      ],
+      "meaning": "B,T,4C: feed-forward expansion"
+    },
+    {
+      "name": "blocks.1.mlp.gelu",
+      "shape": [
+        1,
+        11,
+        256
+      ],
+      "meaning": "B,T,4C: nonlinear activation"
+    },
+    {
+      "name": "blocks.1.mlp.down",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: feed-forward compression"
+    },
+    {
+      "name": "blocks.1.output",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: residual block output"
+    },
+    {
+      "name": "final_norm",
+      "shape": [
+        1,
+        11,
+        64
+      ],
+      "meaning": "B,T,C: normalized hidden states"
+    },
+    {
+      "name": "logits",
+      "shape": [
+        1,
+        11,
+        28
+      ],
+      "meaning": "B,T,V: one score for every vocabulary token"
+    },
+    {
+      "name": "flat_logits",
+      "shape": [
+        11,
+        28
+      ],
+      "meaning": "B*T,V: logits flattened for cross-entropy"
+    },
+    {
+      "name": "flat_targets",
+      "shape": [
+        11
+      ],
+      "meaning": "B*T: next-token labels flattened for cross-entropy"
+    },
+    {
+      "name": "loss",
+      "shape": [],
+      "meaning": "scalar: mean cross-entropy over valid next-token labels"
+    }
+  ],
+  "gradient_check": {
+    "parameter": "lm_head.weight[0,0]",
+    "epsilon": 0.01,
+    "loss": 3.286290407180786,
+    "loss_plus": 3.2888705730438232,
+    "loss_minus": 3.283714771270752,
+    "backward": 0.25781357288360596,
+    "one_sided": 0.25801658630371094,
+    "centered": 0.25779008865356445,
+    "absolute_error": 2.3484230041503906e-05,
+    "relative_error": 9.10899677578505e-05
+  },
+  "accumulation": {
+    "naive_final": 2.074552297592163,
+    "correct_final": 2.130951166152954,
+    "parameter_gap": 0.23596525192260742,
+    "reference_grad_gap": 0.0
+  },
+  "gradient_lead": {
+    "step": 22,
+    "grad_norm": 2.0927241473828366,
+    "probe_loss": 2.2411396503448486,
+    "relative_grad_norm_change": 0.05283518880071501,
+    "relative_probe_loss_change": 0.00019676934516544631
+  },
+  "mfu": {
+    "parameters": 104576,
+    "tokens_processed": 1600,
+    "elapsed_seconds": 0.18313675000172225,
+    "tokens_per_second": 8736.640788836503,
+    "achieved_tflops": 0.005481857682800196,
+    "peak_tflops": null,
+    "mfu": null,
+    "mfu_text": "unavailable (no peak supplied; CPU-only run)"
+  },
+  "floating_point": {
+    "decimal_input": 0.1,
+    "fp32": {
+      "bits": "00111101110011001100110011001101",
+      "grouped": "0 01111011 10011001100110011001101",
+      "decoded": 0.10000000149011612
+    },
+    "bf16": {
+      "bits": "0011110111001101",
+      "grouped": "0 01111011 1001101",
+      "decoded": 0.10009765625
+    },
+    "fp8_e4m3": {
+      "bits": "00011101",
+      "grouped": "0 0011 101",
+      "decoded": 0.1015625
+    }
+  }
+}
