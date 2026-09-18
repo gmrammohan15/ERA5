@@ -1,0 +1,20 @@
+{
+  "parameters": 132160,
+  "world_size": 32,
+  "correctness": {
+    "max_parameter_difference": 0.0,
+    "differences_by_stage": {
+      "zero1": 0.0,
+      "zero2": 0.0,
+      "zero3": 0.0
+    },
+    "all_close": true,
+    "note": "The arithmetic is the same reference step; the simulator changes ownership and communication, not the optimization rule."
+  },
+  "memory": {
+    "zero0": "2.02 MiB",
+    "zero1": "564.65 KiB",
+    "zero2": "314.59 KiB",
+    "zero3": "64.53 KiB"
+  }
+}
