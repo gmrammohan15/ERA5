@@ -1,0 +1,4 @@
+datasets>=3.0
+matplotlib>=3.8
+tiktoken>=0.7
+torch>=2.0
