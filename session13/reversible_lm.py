@@ -22,6 +22,7 @@ from typing import Iterable
 import torch
 from torch import nn
 from torch.nn import functional as F
+from torch.utils.checkpoint import checkpoint
 
 
 @dataclass(frozen=True)
@@ -344,6 +345,47 @@ class LanguageModel(nn.Module):
     def forward(self, token_ids: torch.Tensor) -> torch.Tensor:
         return self.lm_head(self.hidden(token_ids))
 
+    def loss(
+        self,
+        token_ids: torch.Tensor,
+        targets: torch.Tensor,
+        mask: torch.Tensor | None = None,
+        chunk_tokens: int = 1_024,
+    ) -> torch.Tensor:
+        """Exact next-token CE while bounding temporary vocabulary-logit memory."""
+        hidden = self.hidden(token_ids).reshape(-1, self.config.d_model)
+        flat_targets = targets.reshape(-1)
+        if mask is not None:
+            flat_mask = mask.reshape(-1).bool()
+            hidden = hidden[flat_mask]
+            flat_targets = flat_targets[flat_mask]
+        if flat_targets.numel() == 0:
+            raise ValueError("loss mask contains no contributing tokens")
+        loss_sum = hidden.new_zeros(())
+        for start in range(0, flat_targets.numel(), chunk_tokens):
+            hidden_chunk = hidden[start : start + chunk_tokens]
+            target_chunk = flat_targets[start : start + chunk_tokens]
+            if torch.is_grad_enabled() and self.training:
+                chunk_loss = checkpoint(
+                    _output_chunk_cross_entropy,
+                    hidden_chunk,
+                    target_chunk,
+                    self.lm_head.weight,
+                    use_reentrant=False,
+                )
+            else:
+                chunk_loss = _output_chunk_cross_entropy(
+                    hidden_chunk, target_chunk, self.lm_head.weight
+                )
+            loss_sum = loss_sum + chunk_loss
+        return loss_sum / flat_targets.numel()
+
+
+def _output_chunk_cross_entropy(
+    hidden: torch.Tensor, targets: torch.Tensor, output_weight: torch.Tensor
+) -> torch.Tensor:
+    return F.cross_entropy(F.linear(hidden, output_weight), targets, reduction="sum")
+
 
 @dataclass
 class TokenStreams:
@@ -456,8 +498,7 @@ def evaluate(model: LanguageModel, stream: torch.Tensor, device: torch.device, t
         ids = stream[counted : counted + take + 1].long().to(device)
         inputs, targets = ids[:-1].unsqueeze(0), ids[1:].unsqueeze(0)
         mask = torch.ones_like(targets, dtype=torch.bool)
-        logits = model(inputs)
-        loss = masked_cross_entropy(logits, targets, mask)
+        loss = model.loss(inputs, targets)
         total_loss += loss.item() * take
         counted += take
     if was_training:
@@ -510,8 +551,8 @@ def train_run(
             streams.train, batch_size, config.context_length, device, current_tokens
         )
         optimizer.zero_grad(set_to_none=True)
-        logits = model(inputs)
-        loss = masked_cross_entropy(logits, targets, mask)
+        loss_mask = None if current_tokens == batch_size * config.context_length else mask
+        loss = model.loss(inputs, targets, loss_mask)
         if not torch.isfinite(loss):
             raise RuntimeError(f"non-finite loss at step {step}")
         loss.backward()
@@ -520,14 +561,18 @@ def train_run(
         scheduler.step()
         tokens_processed += current_tokens
         if step == 0 or (step + 1) % config.eval_interval == 0 or step + 1 == steps:
-            records.append(
-                {
-                    "step": step + 1,
-                    "training_tokens": tokens_processed,
-                    "loss": float(loss.detach().item()),
-                    "learning_rate": float(scheduler.get_last_lr()[0]),
-                    "gradient_norm": float(grad_norm.detach().item()),
-                }
+            record = {
+                "step": step + 1,
+                "training_tokens": tokens_processed,
+                "loss": float(loss.detach().item()),
+                "learning_rate": float(scheduler.get_last_lr()[0]),
+                "gradient_norm": float(grad_norm.detach().item()),
+            }
+            records.append(record)
+            print(
+                f"[{run_name}] step {step + 1:,}/{steps:,} | "
+                f"tokens {tokens_processed:,}/{config.train_tokens:,} | loss {record['loss']:.4f}",
+                flush=True,
             )
     _cuda_sync(device)
     elapsed = time.perf_counter() - started
@@ -550,6 +595,7 @@ def train_run(
         "peak_gpu_reserved_gib": reserved,
         "device": str(device),
         "parameter_count": model.parameter_count(),
+        "output_loss_chunk_tokens": 1_024,
         "weight_decay": 0.0,
         "dropout": 0.0,
         "seed": config.seed,
@@ -561,7 +607,7 @@ def train_run(
         writer = csv.DictWriter(handle, fieldnames=list(records[0]))
         writer.writeheader()
         writer.writerows(records)
-    del optimizer, scheduler, model, inputs, targets, mask, logits, loss
+    del optimizer, scheduler, model, inputs, targets, mask, loss
     gc.collect()
     if device.type == "cuda":
         torch.cuda.empty_cache()
@@ -580,7 +626,7 @@ def _one_step_probe(
         optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate, weight_decay=0.0)
         inputs, targets, mask = make_batch(streams.train, batch_size, config.context_length, device)
         optimizer.zero_grad(set_to_none=True)
-        loss = masked_cross_entropy(model(inputs), targets, mask)
+        loss = model.loss(inputs, targets)
         loss.backward()
         optimizer.step()
         _cuda_sync(device)
@@ -606,7 +652,7 @@ def calibrate_max_batch(
     variant: str,
     device: torch.device,
     max_batch: int = 1024,
-    memory_fraction: float = 0.88,
+    memory_fraction: float = 0.70,
 ) -> tuple[int, list[dict]]:
     """Find the largest tested sequence batch with a safe memory headroom."""
     if device.type != "cuda":
@@ -666,6 +712,25 @@ def run_smoke_checks() -> dict:
     loss.backward()
     assert torch.isfinite(loss) and all(p.grad is None or torch.isfinite(p.grad).all() for p in lm.parameters())
     results["checks"]["causal_loss_backward"] = float(loss.detach())
+    comparison_model = LanguageModel(config, "baseline")
+    comparison_input, comparison_targets = ids[:, :-1], ids[:, 1:]
+    comparison_mask = torch.ones_like(comparison_targets, dtype=torch.bool)
+    full_loss = F.cross_entropy(
+        comparison_model(comparison_input).reshape(-1, config.vocab_size),
+        comparison_targets.reshape(-1),
+    )
+    full_gradients = torch.autograd.grad(full_loss, tuple(comparison_model.parameters()))
+    chunk_loss = comparison_model.loss(
+        comparison_input, comparison_targets, comparison_mask, chunk_tokens=7
+    )
+    chunk_gradients = torch.autograd.grad(chunk_loss, tuple(comparison_model.parameters()))
+    chunk_gradient_error = max(
+        (full_gradient - chunk_gradient).abs().max().item()
+        for full_gradient, chunk_gradient in zip(full_gradients, chunk_gradients)
+    )
+    assert torch.allclose(full_loss, chunk_loss, atol=2e-6, rtol=2e-6)
+    assert chunk_gradient_error < 2e-5, chunk_gradient_error
+    results["checks"]["chunked_loss_max_gradient_error"] = chunk_gradient_error
     with torch.no_grad():
         changed = ids.clone()
         changed[:, 10:] = torch.randint(0, config.vocab_size, changed[:, 10:].shape)
@@ -746,7 +811,7 @@ def run_smoke_checks() -> dict:
         tiny_model = LanguageModel(config, variant)
         tiny_optimizer = torch.optim.AdamW(tiny_model.parameters(), lr=1e-3, weight_decay=0.0)
         tiny_optimizer.zero_grad(set_to_none=True)
-        tiny_loss = masked_cross_entropy(tiny_model(x), y, mask)
+        tiny_loss = tiny_model.loss(x, y, mask, chunk_tokens=7)
         tiny_loss.backward()
         tiny_optimizer.step()
         assert torch.isfinite(tiny_loss)

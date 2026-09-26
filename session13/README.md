@@ -9,6 +9,7 @@ Train a roughly 20M-parameter causal LM for 50M tokens, compare ordinary Transfo
 - **Hamiltonian symplectic Euler:** reversible position/momentum updates, also reconstructed during backward.
 - **Data:** streaming FineWeb-Edu `sample-10BT`, GPT-2 BPE tokenization, a deterministic document-hash validation split, and packed token windows. The train stream is cut at exactly 50,000,000 tokens; each variant sees that same token stream and 250,000 held-out validation tokens.
 - **Matched settings:** 256-token context, identical initialization seed, AdamW, no dropout, and zero weight decay. The default architecture has 20,039,680 trainable parameters.
+- **Memory guard:** the vocabulary projection and cross-entropy are computed in recomputed 1,024-token chunks, reducing peak temporary logits memory without changing the CE objective. Batch calibration leaves at least 30% of GPU memory unreserved as a safety margin.
 
 The reversible architectures are based on the midpoint and Hamiltonian symplectic-Euler constructions described in [Reversing Large Language Models for Efficient Training and Fine-Tuning](https://arxiv.org/abs/2512.02056). The paper also discusses leapfrog; this assignment run focuses on the two variants named in the session transcript. Plain residual Euler is not reversible, so it is not used as a reversible baseline.
 
@@ -29,7 +30,7 @@ This checks the model parameter target, causal masking and next-token loss, reco
 3. Run the notebook from the top. It caches tokenized data and results under `MyDrive/session13_artifacts` when Drive is mounted.
 4. The notebook calibrates the largest baseline-safe batch, runs baseline/midpoint/symplectic-Euler at that fixed batch, selects the reversible method with the lower final validation loss, calibrates its maximum safe batch, and runs that final comparison.
 
-All four training runs process 50M tokens. Runtime varies by Colab GPU and its current load. Batch calibration uses one probe update per tested batch and keeps at least 12% of reported GPU memory unallocated as headroom. The search is capped at 1,024 sequences; the report flags if that cap is reached instead of claiming a hardware limit beyond the search range.
+All four training runs process 50M tokens. Runtime varies by Colab GPU and its current load. Batch calibration uses one probe update per tested batch and keeps at least 30% of reported GPU memory unreserved as headroom. The search is capped at 1,024 sequences; the report flags if that cap is reached instead of claiming a hardware limit beyond the search range.
 
 ## Outputs
 
